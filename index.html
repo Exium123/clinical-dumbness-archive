@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Clinical Dumbness Archive</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b0b0f;
+    color: #e6e6e6;
+    line-height: 1.6;
+  }
+
+  header {
+    background: linear-gradient(90deg, #ff004c, #7a00ff);
+    padding: 25px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #111;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  button {
+    background: #1f1f2f;
+    color: white;
+    border: 1px solid #444;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+
+  button:hover {
+    background: #2d2d44;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+  }
+
+  h2 {
+    color: #ffcc00;
+  }
+
+  .box {
+    background: #151521;
+    padding: 15px;
+    border-left: 4px solid #ff004c;
+    margin: 15px 0;
+  }
+
+  .glitch {
+    color: #ff3b3b;
+    font-weight: bold;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    opacity: 0.5;
+    font-size: 12px;
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  CLINICAL DUMBNESS ARCHIVE // CLASSIFIED BUT NOT REALLY
+</header>
+
+<div class="buttons">
+  <button onclick="show('main')">Clinical Dumbness</button>
+  <button onclick="show('math')">Math Softlock</button>
+  <button onclick="show('fbi')">FBI Division</button>
+  <button onclick="show('gerald')">Gerald File</button>
+  <button onclick="show('hurr')">History of HURR</button>
+</div>
+
+<div class="container" id="content"></div>
+
+<footer>
+DOCUMENT STATUS: CHAOTIC // POSSIBLY ACCURATE // PROBABLY NOT
+</footer>
+
+<script>
+const articles = {
+
+main: `
+<h2>Overview</h2>
+<div class="box">
+Clinical Dumbness is a rare neurological condition classified under the IMMORTAL STUPIDITY DIVISION.
+Individuals affected experience reality distortion, accidental heroism, and spontaneous yelling of "HURR".
+</div>
+
+<h2>Symptoms</h2>
+<div class="box">
+- Sudden inability to process basic arithmetic (1+1 may cause freezing)<br>
+- Attraction to suspiciously convenient objects<br>
+- Random combat proficiency spikes<br>
+- Emotional damage after seeing math<br>
+- Saying "HURR" under stress
+</div>
+
+<h2>Stages of Infection</h2>
+<div class="box">
+Stage 1: Confusion<br>
+Stage 2: Falling over air<br>
+Stage 3: Accepting the stick<br>
+Stage 4: Becoming slightly powerful<br>
+Stage 5: UNKNOWN TRANSFORMATION
+</div>
+
+<h2>Known Cases</h2>
+<div class="box">
+Subject: Dumbob<br>
+Status: Active<br>
+Notes: Can defeat armed groups but loses to "1+1".<br><br>
+
+Subject: Goofball<br>
+Status: Deceased (revived via syringe event)<br>
+Notes: Exploded due to peak stupidity exposure.
+</div>
+
+<h2>The FBI Incident</h2>
+<div class="box">
+The FBI attempted containment of Dumbob during INCIDENT: 1v100 HURR EVENT.<br><br>
+Outcome: Failure confirmed.<br>
+Remaining agents: ██████
+</div>
+
+<h2>Final Note</h2>
+<div class="box">
+Clinical Dumbness is not just a condition. It is a phenomenon.<br><br>
+And if you hear "HURR"... it is already too late.
+</div>
+`,
+
+math: `
+<h2>Why Math Softlocks Victims</h2>
+<div class="box">
+Math is classified as a containment weapon used against Clinical Dumbness subjects.
+</div>
+
+<h2>Core Mechanism</h2>
+<div class="box">
+When exposed to simple equations like 1+1, the brain enters:
+“PERMANENT CALCULATION FREEZE”
+</div>
+
+<h2>Danger Levels</h2>
+<div class="box">
+Level 1: Addition (safe for normal humans)<br>
+Level 2: Multiplication (danger increasing)<br>
+Level 3: Letters in math (critical)<br>
+Level 4: Fractions (system instability)<br>
+Level 5: CALCULUS (instant shutdown)
+</div>
+
+<h2>Case File</h2>
+<div class="box">
+Dumbob encountered "1+1" and froze for 17 minutes before rebooting incorrectly.
+</div>
+
+<h2>Conclusion</h2>
+<div class="box">
+Math is not knowledge. It is a trigger.
+</div>
+`,
+
+fbi: `
+<h2>FBI Anti-Dumbob Division</h2>
+<div class="box">
+Created after INCIDENT: 1v100 HURR EVENT when normal containment failed.
+</div>
+
+<h2>Equipment</h2>
+<div class="box">
+- Math grenades<br>
+- Stick neutralizers<br>
+- Bug containment units<br>
+- Emotional support calculators
+</div>
+
+<h2>Failure Report</h2>
+<div class="box">
+All 100 agents were neutralized in under 4 minutes.
+</div>
+
+<h2>Internal Log</h2>
+<div class="box">
+“We thought it was just yelling. It wasn’t just yelling.”
+</div>
+
+<h2>Status</h2>
+<div class="box">
+Organization: Compromised<br>
+Backup plan: None
+</div>
+`,
+
+gerald: `
+<h2>The ONLY Survivor of Calculus</h2>
+<div class="box">
+Name: Gerald<br>
+Status: Alive (unchanged)<br>
+Classification: Unknown resistance entity
+</div>
+
+<h2>Incident</h2>
+<div class="box">
+Gerald was exposed to full calculus sequence including integrals, derivatives, and limits.<br>
+All subjects vanished except him.
+</div>
+
+<h2>Hypotheses</h2>
+<div class="box">
+- Not human<br>
+- Math immune mutation<br>
+- Calculus fear response reversal<br>
+- Error in reality system
+</div>
+
+<h2>Behavior</h2>
+<div class="box">
+Gerald does not speak. He only nods when asked math questions.
+</div>
+
+<h2>Warning</h2>
+<div class="box">
+Do NOT attempt algebra near Gerald. System instability increases.
+</div>
+`,
+
+hurr: `
+<h2>The History of HURR</h2>
+<div class="box">
+HURR is the primary vocal output of Clinical Dumbness subjects.
+</div>
+
+<h2>Origins</h2>
+<div class="box">
+First recorded instance: unknown anomaly during rock awakening event.
+</div>
+
+<h2>Meaning</h2>
+<div class="box">
+No official translation exists.<br>
+Researchers believe it represents emotional overload + system failure.
+</div>
+
+<h2>Variants</h2>
+<div class="box">
+- HURR (normal)<br>
+- HURRR (combat mode)<br>
+- HURRRRRRR (final form activation)
+</div>
+
+<h2>Risk Level</h2>
+<div class="box">
+If you hear "HURR" behind you, do NOT turn around under any condition.
+</div>
+`
+};
+
+function show(key){
+  document.getElementById("content").innerHTML = articles[key];
+}
+
+show("main");
+</script>
+
+</body>
+</html>
